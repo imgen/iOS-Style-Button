@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Crosswall"/>
+
+    <style name="Crosswall.IOSButton">
+        <item name="btn_strokeWidth">1dp</item>
+        <item name="btn_strokeColor">@android:color/darker_gray</item>
+        <item name="btn_blur">false</item>
+        <item name="btn_cornerRadius">2dp</item>
+        <item name="btn_unpressColor">@android:color/white</item>
+        <item name="btn_pressColor">@android:color/darker_gray</item>
+        <item name="btn_text_unpressColor">@android:color/darker_gray</item>
+        <item name="btn_text_pressColor">@android:color/white</item>
+    </style>
+
+</resources>
