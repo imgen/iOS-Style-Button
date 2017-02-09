@@ -50,7 +50,7 @@ namespace Crosswall
 			Init(context, attrs, defStyleAttr, defStyleRes);
 		}
 
-		private void Init(Context context, IAttributeSet attrs, int defStyleAttr, int defStyleRes)
+		void Init(Context context, IAttributeSet attrs, int defStyleAttr, int defStyleRes)
 		{
 			_resources = Resources;
 			if (_gradientDrawable == null)
@@ -77,26 +77,8 @@ namespace Crosswall
 			Gravity = GravityFlags.Center;
 			SetTextColor(textUnPressColor);
 
-			//SetOnTouchListener(this);
 			Clickable = true;
 		}
-
-		//public bool OnTouch(View v, MotionEvent e)
-		//{
-		//	switch (e.Action)
-		//	{
-		//		case MotionEventActions.Down:
-		//			SetPressStatus(true);
-		//			break;
-		//		case MotionEventActions.Move:
-		//		case MotionEventActions.Cancel:
-		//		case MotionEventActions.Up:
-		//			SetPressStatus(false);
-		//			break;
-		//	}
-
-		//	return false;
-		//}
 
 		public override bool OnTouchEvent(MotionEvent e)
 		{
@@ -114,34 +96,7 @@ namespace Crosswall
 			return base.OnTouchEvent(e);
 		}
 
-		class OnTouchListener : Java.Lang.Object, IOnTouchListener
-		{
-			IOSButton _button;
-
-			public OnTouchListener(IOSButton button)
-			{
-				_button = button;
-			}
-
-			public bool OnTouch(View v, MotionEvent e)
-			{
-				switch (e.Action)
-				{
-					case MotionEventActions.Down:
-						_button.SetPressStatus(true);
-						break;
-					case MotionEventActions.Move:
-					case MotionEventActions.Cancel:
-					case MotionEventActions.Up:
-						_button.SetPressStatus(false);
-						break;
-				}
-
-				return false;
-			}
-		}
-
-		private void SetButtonBackgroud()
+		void SetButtonBackgroud()
 		{
 			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
 				Background = _gradientDrawable;
@@ -237,7 +192,7 @@ namespace Crosswall
 		 *                  所以下面使用移位的方法可以得到每种颜色的值，然后每种颜色值减小一下，在合成RGB颜色，颜色就会看起来深一些了
 		 * @return
 		 */
-		private int ColorBurn(int RGBValues)
+		int ColorBurn(int RGBValues)
 		{
 			int red = RGBValues >> 16 & 0xFF;
 			int green = RGBValues >> 8 & 0xFF;
