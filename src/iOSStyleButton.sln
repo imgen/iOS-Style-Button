@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSStyleButton", "iOSStyleButton\iOSStyleButton.csproj", "{F21C631D-B1B1-42CD-8E08-670AF3FC94CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSStyleButton.Example", "iOSStyleButton.Example\iOSStyleButton.Example.csproj", "{5CF01452-7CEE-4942-A985-6467A7AD7F2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{F21C631D-B1B1-42CD-8E08-670AF3FC94CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F21C631D-B1B1-42CD-8E08-670AF3FC94CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F21C631D-B1B1-42CD-8E08-670AF3FC94CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF01452-7CEE-4942-A985-6467A7AD7F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF01452-7CEE-4942-A985-6467A7AD7F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF01452-7CEE-4942-A985-6467A7AD7F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF01452-7CEE-4942-A985-6467A7AD7F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

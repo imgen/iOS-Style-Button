@@ -4,6 +4,7 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Text;
 using Android.Text.Style;
@@ -13,7 +14,8 @@ using Android.Widget;
 
 namespace Crosswall
 {
-	public class IOSButton : TextView, View.IOnTouchListener
+	[Register("crosswall.IOSButton")]
+	public class IOSButton : TextView
 	{
 		GradientDrawable _gradientDrawable;
 		Color _unPressColor;
@@ -75,24 +77,34 @@ namespace Crosswall
 			Gravity = GravityFlags.Center;
 			SetTextColor(textUnPressColor);
 
-			SetOnTouchListener(this);
+			SetOnTouchListener(new OnTouchListener(this));
 		}
 
-		public bool OnTouch(View v, MotionEvent @event)
+		class OnTouchListener : Java.Lang.Object, IOnTouchListener
 		{
-			switch (@event.Action)
+			IOSButton _button;
+
+			public OnTouchListener(IOSButton button)
 			{
-				case MotionEventActions.Down:
-					SetPressStatus(true);
-					break;
-				case MotionEventActions.Move:
-				case MotionEventActions.Cancel:
-				case MotionEventActions.Up:
-					SetPressStatus(false);
-					break;
+				_button = button;
 			}
 
-			return false;
+			public bool OnTouch(View v, MotionEvent e)
+			{
+				switch (e.Action)
+				{
+					case MotionEventActions.Down:
+						_button.SetPressStatus(true);
+						break;
+					case MotionEventActions.Move:
+					case MotionEventActions.Cancel:
+					case MotionEventActions.Up:
+						_button.SetPressStatus(false);
+						break;
+				}
+
+				return false;
+			}
 		}
 
 		private void SetButtonBackgroud()

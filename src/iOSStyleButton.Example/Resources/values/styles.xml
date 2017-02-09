@@ -1,0 +1,30 @@
+﻿<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="CustomButtonStyle" parent="Crosswall.IOSButton">
+        <item name="btn_strokeWidth">1dp</item>
+        <item name="btn_strokeColor">@color/yellow</item>
+        <item name="btn_blur">false</item>
+        <item name="btn_cornerRadius">4dp</item>
+        <item name="btn_unpressColor">@color/gray</item>
+        <item name="btn_pressColor">@color/red</item>
+        <item name="btn_text_unpressColor">@color/white</item>
+        <item name="btn_text_pressColor">@color/white</item>
+    </style>
+
+    <style name="CustomRoundButtonStyle" parent="Crosswall.IOSButton">
+        <item name="btn_strokeWidth">1dp</item>
+        <item name="btn_strokeColor">@color/yellow</item>
+        <item name="btn_blur">false</item>
+        <item name="btn_cornerRadius">25dp</item>
+        <item name="btn_unpressColor">@color/gray</item>
+        <item name="btn_pressColor">@color/red</item>
+        <item name="btn_text_unpressColor">@color/white</item>
+        <item name="btn_text_pressColor">@color/white</item>
+    </style>
+
+</resources>
