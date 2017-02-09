@@ -77,7 +77,41 @@ namespace Crosswall
 			Gravity = GravityFlags.Center;
 			SetTextColor(textUnPressColor);
 
-			SetOnTouchListener(new OnTouchListener(this));
+			//SetOnTouchListener(this);
+			Clickable = true;
+		}
+
+		//public bool OnTouch(View v, MotionEvent e)
+		//{
+		//	switch (e.Action)
+		//	{
+		//		case MotionEventActions.Down:
+		//			SetPressStatus(true);
+		//			break;
+		//		case MotionEventActions.Move:
+		//		case MotionEventActions.Cancel:
+		//		case MotionEventActions.Up:
+		//			SetPressStatus(false);
+		//			break;
+		//	}
+
+		//	return false;
+		//}
+
+		public override bool OnTouchEvent(MotionEvent e)
+		{
+			switch (e.Action)
+			{
+				case MotionEventActions.Down:
+					SetPressStatus(true);
+					break;
+				case MotionEventActions.Move:
+				case MotionEventActions.Cancel:
+				case MotionEventActions.Up:
+					SetPressStatus(false);
+					break;
+			}
+			return base.OnTouchEvent(e);
 		}
 
 		class OnTouchListener : Java.Lang.Object, IOnTouchListener
@@ -213,5 +247,6 @@ namespace Crosswall
 			blue = (int)Math.Floor(blue * (1 - 0.1));
 			return Color.Rgb(red, green, blue);
 		}
+
 	}
 }
